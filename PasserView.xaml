@@ -24,9 +24,14 @@
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
-    <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="300">
-        <Grid>
-            <Button Content="PASSDMM" Click="Button_Click" Margin="0,0,0,243"></Button>
+    <DockPanel HorizontalAlignment="Left" LastChildFill="False" Width="580">
+        <Grid Width="580">
+            <TextBox Name="dayTime" Width="550" Height="30" Foreground="White" Margin="10,78,10,184" Background="{x:Null}" ></TextBox>
+            <Button Name="SetBtn" Content="Set Cookies" Click="setCookie" Width="100"  Height="50" Margin="10,10,470,240"></Button>
+            <Button Name="ClearBtn" Content="Clear Cookies" Click="clearCookie" Width="100"  Height="50" Margin="115,10,365,240"></Button>
+            <Button Name="ReloadBtn" Content="Reload Cookies" Click="reloadCookie" Width="100"  Height="50" Margin="10,139,470,111"></Button>
+            <Button Name="ResetBtn" Content="Reset Cookies" Click="resetCookie" Width="100"  Height="50" Margin="220,10,260,240"/>
+            <TextBox  Name="cookieView" Width="550" Height="30" Foreground="White" Margin="10,212,10,50" Background="{x:Null}"  IsReadOnly="True"/>
         </Grid>
     </DockPanel>
 </UserControl>

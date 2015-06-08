@@ -13,7 +13,7 @@ namespace DMMPasser
     [Export(typeof(IToolPlugin))]
     [ExportMetadata("Title", "DMMPasser")]
     [ExportMetadata("Description", "Pass DMM by edit cookies")]
-    [ExportMetadata("Version", "1.0")]
+    [ExportMetadata("Version", "2.0")]
     [ExportMetadata("Author", "@Urbannio")]
     public class DMMPasser : IToolPlugin
     {

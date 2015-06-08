@@ -12,11 +12,40 @@ namespace DMMPasser
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern bool InternetSetCookie(string lpszUrlName, string lbszCookieName, string lpszCookieData);
 
-        public void PassDMM()
+        [DllImport("wininet.dll", SetLastError = true)]
+        public static extern bool InternetGetCookie(string lpszUrl, string lpszCookieName,StringBuilder lpszCookieData, ref int lpdwSize);
+
+        private readonly string defaultDayTime = "Sun, 01-Jan-2019 00:00:00 GMT";
+        private string domain = "http://www.dmm.com/netgame/";
+        private static string cookieName = "ckcy";
+
+        private Cookie faCookie = new Cookie(cookieName, "1");
+
+        public void setCookie()
         {
-            Cookie temp1 = new Cookie("ckcy", "1");
-            InternetSetCookie("http://www.dmm.com/netgame/", null, temp1.ToString() + "; expires = Sun, 01-Jan-2019 00:00:00 GMT");
+            InternetSetCookie(domain, null, faCookie.ToString() + "; expires = "+defaultDayTime);
         }
+        public void setCookie(string dayTime)
+        {  
+            InternetSetCookie(domain, null, faCookie.ToString() + "; expires = " + dayTime);
+        }
+
+        public string getCookie()
+        {
+            int size = 0;
+            InternetGetCookie(domain, cookieName, null, ref size);
+            if (size <= 0)
+                return "no cookie";
+            StringBuilder lpszCookieData = new StringBuilder(size);
+            InternetGetCookie(domain, cookieName, lpszCookieData, ref size);
+
+            return lpszCookieData.ToString();
+        }
+        public string getDefaultDayTime()
+        {
+            return defaultDayTime;
+        }
+        
     }
 
    

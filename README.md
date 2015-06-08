@@ -7,9 +7,9 @@ plugin for kancolle viewer
 yuyuvn版貌似已經有改cookie的功能，理論上不須此插件。
 
 使用方法 :
-1. 把DMMPasser.dll丟到kcv目錄下的Plugin資料夾中
-2. 用vpn正常登入遊戲
-3. 點選ツール -> DMMPasser -> passdmm
+1. 把DMMPasser.dll丟到kcv目錄下的Plugin資料夾中<br>
+2. 用vpn正常登入遊戲<br>
+3. 點選ツール -> DMMPasser -> passdmm<br>
 
 之後登入都不用vpn了。
 
